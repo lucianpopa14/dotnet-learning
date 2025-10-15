@@ -14,7 +14,7 @@ namespace VehicleMgmtConsole.Models
         public string Model { get; set; }
         public int Year { get; set; }
 
-        public virtual void  StartEngine() => Console.WriteLine("The vehicle engine starts.");
+        public virtual void StartEngine() => Console.WriteLine("The vehicle engine starts.");
         public virtual void Drive() => Console.WriteLine("The vehicle is driving on the road.");
     }
 }
