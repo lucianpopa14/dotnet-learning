@@ -99,7 +99,7 @@ internal class Program
         foreach (var animal in animals)
         {
             animal.Speak();
-            if(animal is IFlyable flyable) flyable.Fly();
+            if (animal is IFlyable flyable) flyable.Fly();
         }
     }
 
