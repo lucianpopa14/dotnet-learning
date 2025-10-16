@@ -82,7 +82,7 @@ internal class Program
         var animal = animals.FirstOrDefault(animal => animal.Id == id);
         if (animal is null)
         {
-            Console.WriteLine("No animal with that id.");
+            Console.WriteLine("Animal not found.");
             return;
         }
         animals.Remove(animal);
@@ -146,40 +146,43 @@ internal class Program
 
     private static void AddBird()
     {
-        var Bird = new Bird
+        var bird = new Bird
         {
             Id = NextId(),
             Name = ReadString("Name"),
             Age = ReadInt("Age"),
-            WingSpanCm = ReadInt("Wingspan (cm)")
+            WingSpanCm = ReadInt("Wingspan (cm)"),
+            IntakeDate = DateTime.Now
         };
-        animals.Add(Bird);
+        animals.Add(bird);
         Console.WriteLine("Bird added.");
     }
 
     private static void AddCat()
     {
-        var Cat = new Cat
+        var cat = new Cat
         {
             Id = NextId(),
             Name = ReadString("Name"),
             Age = ReadInt("Age"),
-            IsIndoor = ReadBool("Is Indoor (y/n)")
+            IsIndoor = ReadBool("Is Indoor (y/n)"),
+            IntakeDate = DateTime.Now
         };
-        animals.Add(Cat);
+        animals.Add(cat);
         Console.WriteLine("Cat added.");
     }
 
     private static void AddDog()
     {
-        var Dog = new Dog
+        var dog = new Dog
         {
             Id = NextId(),
             Name = ReadString("Name"),
             Age = ReadInt("Age"),
-            IsTrained = ReadBool("Is Trained (y/n)")
+            IsTrained = ReadBool("Is Trained (y/n)"),
+            IntakeDate = DateTime.Now
         };
-        animals.Add(Dog);
+        animals.Add(dog);
         Console.WriteLine("Dog added.");
     }
 
