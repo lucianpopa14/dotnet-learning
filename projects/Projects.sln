@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mslearn-dotnet-files", "msl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{970C54AB-0413-630A-A205-8865AEAEAA88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeManagementSystem", "CollegeManagementSystem\CollegeManagementSystem.csproj", "{742F5603-16D5-478E-8027-704488904DE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,8 +99,23 @@ Global
 		{970C54AB-0413-630A-A205-8865AEAEAA88}.Release|x64.Build.0 = Release|Any CPU
 		{970C54AB-0413-630A-A205-8865AEAEAA88}.Release|x86.ActiveCfg = Release|Any CPU
 		{970C54AB-0413-630A-A205-8865AEAEAA88}.Release|x86.Build.0 = Release|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Debug|x64.Build.0 = Debug|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Debug|x86.Build.0 = Debug|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Release|x64.ActiveCfg = Release|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Release|x64.Build.0 = Release|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Release|x86.ActiveCfg = Release|Any CPU
+		{742F5603-16D5-478E-8027-704488904DE6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7D8ED8A-2C18-42A3-951F-6250BA53955D}
 	EndGlobalSection
 EndGlobal
