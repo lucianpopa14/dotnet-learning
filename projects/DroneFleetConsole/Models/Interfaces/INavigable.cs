@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DroneFleetConsole.Models.Interfaces
+﻿namespace DroneFleetConsole.Models.Interfaces
 {
     internal interface INavigable
     {
+        void SetWaypoint(double lat, double lon);
+        (double lat, double lon)? CurrentWaypoint { get; }
     }
 }
