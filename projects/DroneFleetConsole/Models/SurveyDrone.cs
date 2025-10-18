@@ -4,9 +4,9 @@ namespace DroneFleetConsole.Models
 {
     internal class SurveyDrone : Drone, INavigable, IPhotoCapture
     {
-        public (double lat, double lon)? CurrentWaypoint => throw new NotImplementedException();
+        public (double lat, double lon)? CurrentWaypoint {  get; set; }
 
-        public int PhotoCount => throw new NotImplementedException();
+        public int PhotoCount {  get; set; }
 
         public void SetWaypoint(double lat, double lon)
         {

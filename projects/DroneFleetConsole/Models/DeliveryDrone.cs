@@ -4,11 +4,11 @@ namespace DroneFleetConsole.Models
 {
     internal class DeliveryDrone : Drone, INavigable, ICargoCarrier
     {
-        public (double lat, double lon)? CurrentWaypoint => throw new NotImplementedException();
+        public (double lat, double lon)? CurrentWaypoint { get; set; }
 
-        public double CurrentLoadKg => throw new NotImplementedException();
+        public double CurrentLoadKg { get; set; }
 
-        public double CurrentCapacityKg => throw new NotImplementedException();
+        public double CurrentCapacityKg { get; set; }
 
         public bool Load(double kg)
         {
