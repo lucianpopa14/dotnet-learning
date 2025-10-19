@@ -12,7 +12,16 @@ namespace DroneFleetConsole.Models
 
         public bool Load(double kg)
         {
-            throw new NotImplementedException();
+            if (kg < CurrentCapacityKg && kg + CurrentLoadKg <= CurrentCapacityKg)
+            {
+                CurrentLoadKg += kg;
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("The load you want to add is too big");
+                return false;
+            }
         }
 
         public void SetWaypoint(double lat, double lon)

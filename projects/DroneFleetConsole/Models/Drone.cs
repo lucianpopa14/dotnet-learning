@@ -11,17 +11,26 @@ namespace DroneFleetConsole.Models
 
         public void Land()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Drone has landed.");
         }
 
         public bool RunSelfTest()
         {
-            throw new NotImplementedException();
+            if (BatteryPercent >= 20)
+            {
+                Console.WriteLine("Self test passed.");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Self test not passed.");
+                return false;
+            }
         }
 
         public void TakeOff()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Drone has taken off.");
         }
     }
 

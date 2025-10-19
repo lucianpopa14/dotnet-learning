@@ -128,8 +128,6 @@ internal class Program
         }
     }
 
-    private static void ShowExtra() { throw new NotImplementedException(); }
-
     private static bool ReadBool(string label)
     {
         while (true)
@@ -166,7 +164,7 @@ internal class Program
 
     private static void ListDrones()
     {
-        Console.WriteLine("Id\t|Name\t|Battery\t|Airborne\t|Extra\t");
+        Console.WriteLine("Id\t|Name\t|Battery\t|Airborne\t");
 
         foreach (var drone in drones)
         {
