@@ -7,11 +7,20 @@ namespace DroneFleetConsole.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int BatteryPercent { get; set; }
-        public bool IsAirborne { get; set; }
+        public bool IsAirborne { get; set; } = false;
 
         public void Land()
         {
-            Console.WriteLine("Drone has landed.");
+            if (!IsAirborne)
+            {
+                Console.WriteLine("Drone is not airborne. ");
+                return;
+            }
+            else
+            {
+                IsAirborne = false;
+                Console.WriteLine($"{Name} landed. Battery {BatteryPercent}%");
+            }
         }
 
         public bool RunSelfTest()
@@ -30,7 +39,25 @@ namespace DroneFleetConsole.Models
 
         public void TakeOff()
         {
-            Console.WriteLine("Drone has taken off.");
+            if (BatteryPercent >= 20)
+            {
+                if (IsAirborne)
+                {
+                    Console.WriteLine("Drone is already airborne.");
+                }
+                else
+                {
+                    BatteryPercent -= 5;
+                    IsAirborne = true;
+                    Console.WriteLine($"{Name} took off. Battery {BatteryPercent}%");
+                }
+            }
+
+            else
+            {
+                Console.WriteLine("Battery too low.");
+                return;
+            }
         }
     }
 

@@ -26,12 +26,22 @@ namespace DroneFleetConsole.Models
 
         public void SetWaypoint(double lat, double lon)
         {
-            throw new NotImplementedException();
+            if (CurrentWaypoint.HasValue)
+            {
+                var current = CurrentWaypoint.Value;
+                CurrentWaypoint = (current.lat + lat, current.lon + lon);
+            }
+            else
+            {
+                CurrentWaypoint = (lat, lon);
+            }
+            Console.WriteLine($"Waypoints lat: {lat}, lon: {lon} have been set.");
         }
 
         public void UnloadAll()
         {
-            throw new NotImplementedException();
+            CurrentLoadKg = 0;
+            Console.WriteLine("The weight has been unloaded.");
         }
     }
 }

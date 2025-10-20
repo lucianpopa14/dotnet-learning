@@ -4,18 +4,28 @@ namespace DroneFleetConsole.Models
 {
     internal class SurveyDrone : Drone, INavigable, IPhotoCapture
     {
-        public (double lat, double lon)? CurrentWaypoint {  get; set; }
+        public (double lat, double lon)? CurrentWaypoint { get; set; }
 
-        public int PhotoCount {  get; set; }
+        public int PhotoCount { get; set; }
 
         public void SetWaypoint(double lat, double lon)
         {
-            throw new NotImplementedException();
+            if (CurrentWaypoint.HasValue)
+            {
+                var current = CurrentWaypoint.Value;
+                CurrentWaypoint = (current.lat + lat, current.lon + lon);
+            }
+            else
+            {
+                CurrentWaypoint = (lat, lon);
+            }
+            Console.WriteLine($"Waypoints lat: {lat}, lon: {lon} have been set.");
         }
 
         public void TakePhoto()
         {
-            throw new NotImplementedException();
+            PhotoCount++;
+            Console.WriteLine("Took photo.");
         }
     }
 }

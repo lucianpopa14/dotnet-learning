@@ -8,7 +8,7 @@ internal class Program
 
     static void Main(string[] args)
     {
-        drones.Add(new SurveyDrone { Id = NextId(), Name = "surveyDrone", BatteryPercent = 50, IsAirborne = false, PhotoCount = 3 });
+        drones.Add(new SurveyDrone { Id = NextId(), Name = "surveyDrone", BatteryPercent = 10, IsAirborne = false, PhotoCount = 3 });
         drones.Add(new DeliveryDrone { Id = NextId(), Name = "cargoDrone", BatteryPercent = 50, IsAirborne = false, CurrentCapacityKg = 25, CurrentLoadKg = 12 });
         drones.Add(new RacingDrone { Id = NextId(), Name = "racingDrone", BatteryPercent = 90, IsAirborne = false, SpeedKmh = 25 });
 
@@ -82,12 +82,37 @@ internal class Program
 
     private static void TakeoffOrLand()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Enter id of the drone to take off or land.");
+        ListDrones();
+
+        var id = ReadInt("Id");
+        var drone = drones.FirstOrDefault(drone => drone.Id == id);
+
+        if (drone is null)
+        {
+            Console.WriteLine("Please retry using an Id from the list.");
+            return;
+        }
+        else
+        {
+            if (drone.IsAirborne)
+            {
+                drone.Land();
+            }
+            else drone.TakeOff();
+        }
     }
 
     private static void PreflightCheck()
     {
-        throw new NotImplementedException();
+        foreach (var drone in drones)
+        {
+            if (drone.BatteryPercent < 20)
+            {
+                Console.WriteLine($"{drone.Name} has battery too low ({drone.BatteryPercent})");
+            }
+            else Console.WriteLine($"{drone.Name} preflight check pass. Battery percentage: {drone.BatteryPercent}");
+        }
     }
 
     private static void AddDrone()
