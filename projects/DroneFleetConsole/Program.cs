@@ -1,4 +1,5 @@
 ﻿using DroneFleetConsole.Models;
+using DroneFleetConsole.Models.Interfaces;
 
 internal class Program
 {
@@ -67,7 +68,15 @@ internal class Program
 
     private static void ChargeBattery()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Enter id of the drone to charge.");
+        var id = ReadInt("id");
+        var drone = drones.FirstOrDefault(drone => drone.Id == id);
+        if (drone.BatteryPercent < 100 && drone.BatteryPercent >= 0)
+        {
+            drone.BatteryPercent = 100;
+            Console.WriteLine($"{drone.Name} has been charged");
+        }
+        else { Console.WriteLine("Drone cannot be charged."); return; }
     }
 
     private static void CapabilityActions()
@@ -77,7 +86,17 @@ internal class Program
 
     private static void SetWaypoint()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Enter id of the drone to set waypoint.");
+        var id = ReadInt("id");
+        var drone = drones.FirstOrDefault(drone => drone.Id == id);
+        if (drone is INavigable navigable)
+        {
+            Console.WriteLine("Let's enter the coordinates.");
+            var lat = ReadInt("lat");
+            var lon = ReadInt("lon");
+            navigable.SetWaypoint(lat, lon);
+        }
+        else { Console.WriteLine("Drone is not navigable."); return; }
     }
 
     private static void TakeoffOrLand()
