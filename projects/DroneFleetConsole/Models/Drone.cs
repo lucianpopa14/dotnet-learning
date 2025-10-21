@@ -27,12 +27,12 @@ namespace DroneFleetConsole.Models
         {
             if (BatteryPercent >= 20)
             {
-                Console.WriteLine("Self test passed.");
+                Console.WriteLine($"{Id}-{Name} self test passed.");
                 return true;
             }
             else
             {
-                Console.WriteLine("Self test not passed.");
+                Console.WriteLine($"{Id}-{Name} self test not passed.");
                 return false;
             }
         }

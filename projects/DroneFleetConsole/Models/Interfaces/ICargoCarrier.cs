@@ -5,6 +5,6 @@
         void UnloadAll();
         bool Load(double kg);
         double CurrentLoadKg { get; }
-        double CurrentCapacityKg { get; }
+        double CapacityKg { get; }
     }
 }

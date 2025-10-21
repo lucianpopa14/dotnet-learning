@@ -10,7 +10,7 @@ internal class Program
     static void Main(string[] args)
     {
         drones.Add(new SurveyDrone { Id = NextId(), Name = "surveyDrone", BatteryPercent = 10, IsAirborne = false, PhotoCount = 3 });
-        drones.Add(new DeliveryDrone { Id = NextId(), Name = "cargoDrone", BatteryPercent = 50, IsAirborne = false, CurrentCapacityKg = 25, CurrentLoadKg = 12 });
+        drones.Add(new DeliveryDrone { Id = NextId(), Name = "cargoDrone", BatteryPercent = 50, IsAirborne = false, CapacityKg = 25, CurrentLoadKg = 12 });
         drones.Add(new RacingDrone { Id = NextId(), Name = "racingDrone", BatteryPercent = 90, IsAirborne = false, SpeedKmh = 25 });
 
         RunMenu();
@@ -70,13 +70,12 @@ internal class Program
     {
         Console.WriteLine("Enter id of the drone to charge.");
         var id = ReadInt("id");
-        var drone = drones.FirstOrDefault(drone => drone.Id == id);
-        if (drone.BatteryPercent < 100 && drone.BatteryPercent >= 0)
-        {
-            drone.BatteryPercent = 100;
-            Console.WriteLine($"{drone.Name} has been charged");
-        }
-        else { Console.WriteLine("Drone cannot be charged."); return; }
+        var drone = drones.FirstOrDefault(d => d.Id == id);
+        if (drone is null) { Console.WriteLine("Drone not found."); return; }
+
+        drone.BatteryPercent = 100;
+
+        Console.WriteLine($"{drone.Name} charged. Battery {drone.BatteryPercent}%.");
     }
 
     private static void CapabilityActions()
@@ -126,11 +125,7 @@ internal class Program
     {
         foreach (var drone in drones)
         {
-            if (drone.BatteryPercent < 20)
-            {
-                Console.WriteLine($"{drone.Name} has battery too low ({drone.BatteryPercent})");
-            }
-            else Console.WriteLine($"{drone.Name} preflight check pass. Battery percentage: {drone.BatteryPercent}");
+            drone.RunSelfTest();
         }
     }
 
@@ -155,16 +150,16 @@ internal class Program
                     Name = ReadString("Name")
                 };
                 drones.Add(deliveryDrone);
-                Console.WriteLine($"Added #{deliveryDrone.Id} SurveyDrone {deliveryDrone.Name}");
+                Console.WriteLine($"Added #{deliveryDrone.Id} DeliveryDrone {deliveryDrone.Name}");
                 break;
             case "racing":
-                var racingDrone = new DeliveryDrone
+                var racingDrone = new RacingDrone
                 {
                     Id = NextId(),
                     Name = ReadString("Name")
                 };
                 drones.Add(racingDrone);
-                Console.WriteLine($"Added #{racingDrone.Id} SurveyDrone {racingDrone.Name}");
+                Console.WriteLine($"Added #{racingDrone.Id} RacingDrone {racingDrone.Name}");
                 break;
             default:
                 Console.WriteLine("Invalid option. Please try again.");

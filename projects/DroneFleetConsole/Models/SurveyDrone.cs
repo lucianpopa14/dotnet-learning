@@ -24,8 +24,10 @@ namespace DroneFleetConsole.Models
 
         public void TakePhoto()
         {
+            if (!IsAirborne) { Console.WriteLine("Cannot take photo while grounded."); return; }
             PhotoCount++;
             Console.WriteLine("Took photo.");
         }
+
     }
 }

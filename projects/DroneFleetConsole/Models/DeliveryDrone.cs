@@ -8,11 +8,11 @@ namespace DroneFleetConsole.Models
 
         public double CurrentLoadKg { get; set; }
 
-        public double CurrentCapacityKg { get; set; }
+        public double CapacityKg { get; set; }
 
         public bool Load(double kg)
         {
-            if (kg < CurrentCapacityKg && kg + CurrentLoadKg <= CurrentCapacityKg)
+            if (kg < CapacityKg && kg + CurrentLoadKg <= CapacityKg)
             {
                 CurrentLoadKg += kg;
                 return true;
