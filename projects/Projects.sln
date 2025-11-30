@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqTest", "LinqTest\LinqTest.csproj", "{32A68B12-375F-4C5C-8F0F-606E76359E6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelListing.API", "HotelListing.API\HotelListing.API.csproj", "{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,18 @@ Global
 		{32A68B12-375F-4C5C-8F0F-606E76359E6D}.Release|x64.Build.0 = Release|Any CPU
 		{32A68B12-375F-4C5C-8F0F-606E76359E6D}.Release|x86.ActiveCfg = Release|Any CPU
 		{32A68B12-375F-4C5C-8F0F-606E76359E6D}.Release|x86.Build.0 = Release|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Debug|x64.Build.0 = Debug|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Debug|x86.Build.0 = Debug|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Release|x64.ActiveCfg = Release|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Release|x64.Build.0 = Release|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Release|x86.ActiveCfg = Release|Any CPU
+		{8484FE32-FEAD-42B5-9035-2D2A2AF9145E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
