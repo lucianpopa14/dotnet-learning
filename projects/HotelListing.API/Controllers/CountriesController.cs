@@ -79,7 +79,7 @@ namespace HotelListing.API.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(country);
         }
 
         // POST: api/Countries

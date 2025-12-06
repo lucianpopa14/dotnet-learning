@@ -9,24 +9,5 @@ namespace HotelListing.API.Repository
         {
 
         }
-        public Task<Hotel> AddAsync(Hotel entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateAsync(Hotel entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<List<Hotel>> IGenericRepository<Hotel>.GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<Hotel> IGenericRepository<Hotel>.GetAsync(int? id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
