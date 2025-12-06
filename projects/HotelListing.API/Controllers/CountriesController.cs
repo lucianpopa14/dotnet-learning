@@ -56,7 +56,7 @@ namespace HotelListing.API.Controllers
 
             var country = await _countriesRepository.GetAsync(id);
 
-            if (country == null)
+            if (!await CountryExists(id))
             {
                 return NotFound();
             }
