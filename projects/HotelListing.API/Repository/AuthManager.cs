@@ -23,6 +23,11 @@ namespace HotelListing.API.Repository
 
             var result = await _userManager.CreateAsync(user, userDto.Password);
 
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, "User");
+            }
+
             return result.Errors;
         }
     }
