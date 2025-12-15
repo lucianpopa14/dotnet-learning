@@ -16,7 +16,22 @@ namespace HotelListing.API.Repository
             this._mapper = mapper;
             this._userManager = userManager;
         }
-        public async Task<IEnumerable<IdentityError>> Register(ApiUserDto userDto)
+        public async Task<bool> Login(LoginDto loginDto)
+        {
+            var isValidUser = false;
+            try
+            {
+                var user = _userManager.FindByEmailAsync(loginDto.Email);
+                isValidUser = await _userManager.CheckPasswordAsync(await user, loginDto.Password);
+            }
+            catch (Exception)
+            {
+
+            }
+            return isValidUser;
+
+        }
+        public async Task<IEnumerable<IdentityError>> Register(LoginDto userDto)
         {
             var user = _mapper.Map<ApiUser>(userDto);
             user.UserName = userDto.Email;
