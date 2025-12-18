@@ -48,7 +48,7 @@ namespace HotelListing.API.Repository
             {
                 return null;
             }
-            var token = await GenerateToken(_user);
+            var token = await GenerateToken();
             return new AuthResponseDto
             {
                 Token = token,
